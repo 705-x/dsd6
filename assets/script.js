@@ -47,6 +47,16 @@ function prepareDeck(gameDifficulty, gameLength){
     return(deck)
 }
 
+function rtd(dice){
+    let arr = [];
+    for(let i = 0; i<dice;i++){
+        arr.push(Math.floor((Math.random() * 6)+1));
+    }
+    console.log(arr);
+    return arr;
+}
+
+
 function lockIn(){
 
 }
@@ -65,34 +75,17 @@ function resolveThreats(){
     });
 }
 
-function checkScanners(){
-    if(scanners >= 3){
 
-    }
-}
-function rtd(dice){
-    let arr = [];
-    for(let i = 0; i<dice;i++){
-        arr.push(Math.floor((Math.random() * 6)+1));
-    }
-    console.log(arr);
-    return arr;
+function gatherCrew(){
+    
 }
 
-function rtd_outcome(arr){
-    arr.forEach(element => {
-        if(element == 6){
-            scanners += 1;
-            available_dice -= 1;
-        }
-    });
-}
 
 async function startGame() {
   await loadCards();  
   prepareDeck("HARD", "SHORTENED");  
   while(deck.length>0){
-    //1. step wdg instrukcji
+    //kroki po kolei wdg instrukcji dsd6
     rtd();
     lockIn();
     assignCrew();
