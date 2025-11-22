@@ -326,6 +326,7 @@
   },
   {
     "name":"Corsair",
+    "type":"standard",
     "starting_hp":2,
     "activation_values":[4,5,6],
     "effect":{
@@ -343,6 +344,7 @@
   },
   {
     "name":"Friendly Fire",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[],
     "effect":{
@@ -360,6 +362,7 @@
   },
   {
     "name":"Assault Cruiser",
+    "type":"standard",
     "starting_hp":4,
     "activation_values":[4,5],
     "effect":{
@@ -377,6 +380,7 @@
   },
   {
     "name":"Assault Cruiser",
+    "type":"standard",
     "starting_hp":4,
     "activation_values":[1,2],
     "effect":{
@@ -394,6 +398,7 @@
   },
   {
     "name":"Panel Explosion",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[],
     "effect":{
@@ -411,6 +416,7 @@
   },
   {
     "name":"Pandemic",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[1],
     "effect":{
@@ -430,6 +436,7 @@
   },
   {
     "name":"Invaders",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[2.4],
     "effect":{
@@ -448,6 +455,7 @@
   },
   {
     "name":"Comms Offline",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[],
     "effect":{
@@ -466,6 +474,7 @@
   },
   {
     "name":"Robot Uprising",
+    "type":"standard",
     "starting_hp":0,
     "activation_values":[1,2,3],
     "effect":{
