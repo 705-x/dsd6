@@ -2,20 +2,30 @@
 var scanners = 0;
 var hp = 8;
 var shields = 4;
+
 var deck = [];
 var active_threats = [];
+var disabled_threats = [];
+
 var available_crew_dice = 6;
-var crew_dice = [];
+var returnable_dice = 0;
+var rolled_crew_dice = [];
+var crew_assignment = [0, 0, 0, 0, 0];
+var crew_blocks = [false, false, false, false, false]
 
 
 
 async function loadCards() {
   var response = await fetch('cards.json');
   deck = await response.json();
+  console.log("loaded deck:")
   console.log(deck);
 }
 
 async function prepareDeck(gameDifficulty, gameLength){
+   
+    console.log(deck);
+    
     switch(gameDifficulty){
         case("EASY"):
             deck.splice(-6, 1)
@@ -48,45 +58,74 @@ async function prepareDeck(gameDifficulty, gameLength){
     console.log(deck);
 }
 
-function rollCrew(){
+function drawThreat(){
+    active_threats.push(Math.floor(Math.random() * deck.length))
+}
+
+function rollCrewAndLockIn(){
     crew_dice = [];
     for(let i = 0; i<available_crew_dice;i++){
-        crew_dice.push(Math.floor((Math.random() * 6)+1));
+        x = (Math.floor((Math.random() * 6)+1))
+        if(x == 6 && scanners < 3){
+            scanners++;
+            available_crew_dice--;
+        }else if(x == 6 && scanners == 3){
+            returnable_dice = 3;
+            scanners = 1;
+            drawThreat();
+            available_crew_dice --;
+        }else{
+            rolled_crew_dice.push(x);
+        }
     }
-    console.log(crew_dice);
+    console.log(rolled_crew_dice); 
 }
 
 
-function lockIn(){
-    
-}
-
-function assignCrew(){
-
+function assignCrew(dice){
+    crew_assignment[dice-1] += 1;
+    console.log(crew_assignment);
 }
 
 function resolveThreats(){
+
+    let threat_die = Math.floor((Math.random() * 6)+1);
+    console.log("threat die throw:" + threat_die)
+
     active_threats.forEach(threat => {
-        if(threat.type = "standard"){
-            console.log("standard")
-        }else if(threat.type = "special"){
-            console.log("special") 
+        if(threat.activation_values.includes(threat_die)){
+            if(threat.type = "standard"){
+                if(threat.effect["ignore_shields"]){
+                    hp -= threat.effect["damage"];
+                }else{
+                    for(let i = 0; i<threat.effect["damage"];i++){
+                        if(shields>0){
+                            shields -= 1;
+                        }else{
+                            hp -= 1;
+                        }
+                    }
+                }
+            }else if(threat.type = "special"){
+                console.log("special");
+                //eval(threat.effect["functionName"] + "()")
+            }
         }
     });
 }
 
 
-function gatherCrew(){
-
-}
 
 
 async function startGame() {
   await loadCards();  
-  await prepareDeck("EASY", "SHORT");  
+  prepareDeck("EASY", "SHORT");  
   active_threats.push(deck[4]);
-  console.log(active_threats);
-  resolveThreats();
+  console.log()
+  console.log(deck[4].effect.damage);
+  rollCrewAndLockIn(); 
+  assignCrew();
+
   /*while(deck.length>0){
     //kroki po kolei wdg instrukcji dsd6
     rollCrew();
@@ -94,7 +133,7 @@ async function startGame() {
     assignCrew();
     drawThreat();
     resolveThreats();
-    gatherCrew();
+    available_dice += returnable_dice;
     
   }*/
 }

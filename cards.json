@@ -345,7 +345,7 @@
   {
     "name":"Friendly Fire",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -399,7 +399,7 @@
   {
     "name":"Panel Explosion",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -417,7 +417,7 @@
   {
     "name":"Pandemic",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[1],
     "effect":{
         "damage":0,
@@ -437,7 +437,7 @@
   {
     "name":"Invaders",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[2.4],
     "effect":{
         "damage":0,
@@ -456,7 +456,7 @@
   {
     "name":"Comms Offline",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -475,7 +475,7 @@
   {
     "name":"Robot Uprising",
     "type":"standard",
-    "starting_hp":0,
+    "starting_hp":null,
     "activation_values":[1,2,3],
     "effect":{
         "damage":0,
@@ -493,26 +493,32 @@
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   },
   {
     "name":"Don't Panic",
+    "type":"nopanic",
     "image":"Don'tPanic.png"
   }
 ]
