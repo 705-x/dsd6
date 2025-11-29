@@ -22,6 +22,8 @@ async function loadCards() {
   console.log(deck);
 }
 
+
+
 async function prepareDeck(gameDifficulty, gameLength){
    
     console.log(deck);
@@ -58,12 +60,63 @@ async function prepareDeck(gameDifficulty, gameLength){
     console.log(deck);
 }
 
-function drawThreat(){
-    active_threats.push(Math.floor(Math.random() * deck.length))
+function newThreat(){
+    active_threats.push(deck[Math.floor(Math.random() * deck.length)]);
+}
+
+function drawThreats(){
+    active_threats.forEach(threat => {
+        var div = document.createElement("div");
+        div.style.width = "350px";
+        div.style.height = "100%";
+        div.style.backgroundImage = `url("/assets/images/cards/${threat.image}")`;
+        div.style.backgroundSize = "cover";
+        div.style.border = "1px solid red"; // pomocnicze
+        console.log(threat.image);
+        if(threat.hp != null){
+            
+            document.getElementById(`${threat.hp}hp`).appendChild(div);    
+        }else{
+            document.getElementById("4hp").appendChild(div);  
+        }  
+        
+    });
+}
+
+function drawDice(){
+        rolled_crew_dice.forEach(dice => {
+            var div = document.createElement("div");
+            div.style.width = "70px";
+            div.style.height = "70px";
+            switch(dice){
+                case 1:
+                    div.style.backgroundImage = 'url("/assets/images/crew/command.png")';
+                    break;
+                case 2:
+                    div.style.backgroundImage = 'url("/assets/images/crew/tactical.png")';
+                    break;
+                case 3:
+                    div.style.backgroundImage = 'url("/assets/images/crew/medical.png")';
+                    break;
+                case 4:
+                    div.style.backgroundImage = 'url("/assets/images/crew/science.png")';
+                    break;
+                case 5:
+                    div.style.backgroundImage = 'url("/assets/images/crew/engineering.png")';
+                    break;
+            }
+            div.onclick = () => {assignCrew(dice, div)};
+            div.style.backgroundSize = "cover";
+            document.getElementById("rolled-dice").appendChild(div);
+        });
+           
+}
+
+function kys(){
+
 }
 
 function rollCrewAndLockIn(){
-    crew_dice = [];
     for(let i = 0; i<available_crew_dice;i++){
         x = (Math.floor((Math.random() * 6)+1))
         if(x == 6 && scanners < 3){
@@ -72,7 +125,7 @@ function rollCrewAndLockIn(){
         }else if(x == 6 && scanners == 3){
             returnable_dice = 3;
             scanners = 1;
-            drawThreat();
+            newThreat();
             available_crew_dice --;
         }else{
             rolled_crew_dice.push(x);
@@ -82,9 +135,10 @@ function rollCrewAndLockIn(){
 }
 
 
-function assignCrew(dice){
+function assignCrew(dice, div){
     crew_assignment[dice-1] += 1;
     console.log(crew_assignment);
+    div.remove();
 }
 
 function resolveThreats(){
@@ -94,7 +148,7 @@ function resolveThreats(){
 
     active_threats.forEach(threat => {
         if(threat.activation_values.includes(threat_die)){
-            if(threat.type = "standard"){
+            if(threat.type === "standard"){
                 if(threat.effect["ignore_shields"]){
                     hp -= threat.effect["damage"];
                 }else{
@@ -106,7 +160,7 @@ function resolveThreats(){
                         }
                     }
                 }
-            }else if(threat.type = "special"){
+            }else if(threat.type === "special"){
                 console.log("special");
                 //eval(threat.effect["functionName"] + "()")
             }
@@ -121,10 +175,14 @@ async function startGame() {
   await loadCards();  
   prepareDeck("EASY", "SHORT");  
   active_threats.push(deck[4]);
-  console.log()
-  console.log(deck[4].effect.damage);
   rollCrewAndLockIn(); 
-  assignCrew();
+  drawDice();
+
+  newThreat();
+  newThreat();
+  newThreat();
+  console.log("active_threats = ", active_threats);
+  drawThreats();
 
   /*while(deck.length>0){
     //kroki po kolei wdg instrukcji dsd6

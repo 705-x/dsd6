@@ -2,7 +2,7 @@
   {
     "name":"Flagship",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[4,6,5],
     "effect":{
         "damage":3,
@@ -20,7 +20,7 @@
   {
     "name":"Solar Winds",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[2],
     "effect":{
         "damage":5,
@@ -38,7 +38,7 @@
   {
     "name":"Intercepter",
     "type":"standard",
-    "starting_hp":3,
+    "hp":3,
     "activation_values":[1,2,3,4,5],
     "effect":{
         "damage":1,
@@ -56,7 +56,7 @@
   {
     "name":"Raiders",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[2,6],
     "effect":{
         "damage":2,
@@ -74,7 +74,7 @@
   {
     "name":"Raiders",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[2,6],
     "effect":{
         "damage":2,
@@ -87,12 +87,12 @@
     },
     "away_missions":{
     },
-    "image":"Raiders.png"
+    "image":"Raiders2.png"
   },
   {
     "name":"Raiders",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[1,4],
     "effect":{
         "damage":2,
@@ -105,12 +105,12 @@
     },
     "away_missions":{
     },
-    "image":"Raiders.png"
+    "image":"Raiders3.png"
   },
   {
     "name":"Boarding Ship",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[3,4],
     "effect":{
         "damage":2,
@@ -128,7 +128,7 @@
   {
     "name":"Space Pirates",
     "type":"standard",
-    "starting_hp":3,
+    "hp":3,
     "activation_values":[1,3],
     "effect":{
         "damage":2,
@@ -146,7 +146,7 @@
   {
     "name":"Space Pirates",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[3,6],
     "effect":{
         "damage":2,
@@ -159,12 +159,12 @@
     },
     "away_missions":{
     },
-    "image":"SpacePirates.png"
+    "image":"SpacePirates2.png"
   },
   {
     "name":"Space Pirates",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[3,6],
     "effect":{
         "damage":2,
@@ -177,12 +177,12 @@
     },
     "away_missions":{
     },
-    "image":"SpacePirates.png"
+    "image":"SpacePirates3.png"
   },
   {
     "name":"Meteoroid",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[1],
     "effect":{
         "damage":5,
@@ -200,7 +200,7 @@
   {
     "name":"Drone",
     "type":"standard",
-    "starting_hp":1,
+    "hp":1,
     "activation_values":[2,4,6],
     "effect":{
         "damage":1,
@@ -218,7 +218,7 @@
   {
     "name":"Drone",
     "type":"standard",
-    "starting_hp":1,
+    "hp":1,
     "activation_values":[3,5],
     "effect":{
         "damage":1,
@@ -231,12 +231,12 @@
     },
     "away_missions":{
     },
-    "image":"Drone.png"
+    "image":"Drone2.png"
   },
   {
     "name":"Bomber",
     "type":"standard",
-    "starting_hp":3,
+    "hp":3,
     "activation_values":[3,4],
     "effect":{
         "damage":1,
@@ -254,7 +254,7 @@
   {
     "name":"Bomber",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[2,4],
     "effect":{
         "damage":2,
@@ -267,12 +267,12 @@
     },
     "away_missions":{
     },
-    "image":"Bomber.png"
+    "image":"Bomber2.png"
   },
   {
     "name":"Bomber",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[2,4],
     "effect":{
         "damage":2,
@@ -285,12 +285,12 @@
     },
     "away_missions":{
     },
-    "image":"Bomber.png"
+    "image":"Bomber3.png"
   },
   {
     "name":"Intercepter X",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[1,2,3,4,5],
     "effect":{
         "damage":1,
@@ -308,7 +308,7 @@
   {
     "name":"Hijackers",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[4,5],
     "effect":{
         "damage":2,
@@ -327,7 +327,7 @@
   {
     "name":"Corsair",
     "type":"standard",
-    "starting_hp":2,
+    "hp":2,
     "activation_values":[4,5,6],
     "effect":{
         "damage":2,
@@ -345,7 +345,7 @@
   {
     "name":"Friendly Fire",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -363,7 +363,7 @@
   {
     "name":"Assault Cruiser",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[4,5],
     "effect":{
         "damage":2,
@@ -381,7 +381,7 @@
   {
     "name":"Assault Cruiser",
     "type":"standard",
-    "starting_hp":4,
+    "hp":4,
     "activation_values":[1,2],
     "effect":{
         "damage":2,
@@ -394,12 +394,12 @@
     },
     "away_missions":{
     },
-    "image":"AssaultCruiser.png"
+    "image":"AssaultCruiser2.png"
   },
   {
     "name":"Panel Explosion",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -417,7 +417,7 @@
   {
     "name":"Pandemic",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[1],
     "effect":{
         "damage":0,
@@ -437,7 +437,7 @@
   {
     "name":"Invaders",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[2.4],
     "effect":{
         "damage":0,
@@ -456,7 +456,7 @@
   {
     "name":"Comms Offline",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[],
     "effect":{
         "damage":0,
@@ -475,7 +475,7 @@
   {
     "name":"Robot Uprising",
     "type":"standard",
-    "starting_hp":null,
+    "hp":null,
     "activation_values":[1,2,3],
     "effect":{
         "damage":0,

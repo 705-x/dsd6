@@ -1,3 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.label {
+    position: relative;
+    top: 5px; 
+    color: white;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
 body {
     background-color: #131313;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#main-space{
+    flex:1;
+    display: flex;
+}
+#left-side{
+    flex:0.5;
+    display: flex;
+    flex-direction: column;
+}
+
+#internal-threats{
+    border:2px solid white;
+    border-radius: 8px;
+    flex:0.7;
+}
+#ship-extras{
+    
+    flex: 0.2;
+    display: flex;
+}
+#rolled-dice{
+    padding: 5px;
+    border:2px solid white;
+    border-radius: 8px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex:0.1;
+    display: flex;
+    flex-direction: row;
+}
+#collected-dice{
+    border:2px solid white;
+    border-radius: 8px;
+    flex:1
+}
+#infirmary{
+    border:2px solid white;
+    border-radius: 8px;
+    flex:1
+}
+
+
+
+#ship-space{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/assets/images/ships/ship1.png");
+    background-size: 100% 100%;
+}
+#hull{
+    flex:1;
+}
+#scanners{
+    flex:1
+}
+#ship{
+    flex:1
+}
+#hp-shields{
+    flex:1
+}
+#external-threats{
+    justify-content: space-around;
+    flex:1;
+    display:flex;
+    flex-direction: column;
+}
+#dice-space{
+    flex:0.15;
+    border: 2px solid whitesmoke;
+    display: flex;
+}
+#external-threats>*{
+    flex:1;
+    display: flex;
+}
+#dice-space > *{
+    flex:1;
 }
